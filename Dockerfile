@@ -2,14 +2,13 @@
 FROM openjdk:17
 
 # Set the working directory inside the container
-WORKDIR /app
 
 # Copy the JAR file into the container
-COPY target/*.jar /app/app.jar
+ADD target/rps-0.0.1-SNAPSHOT.jar rps-0.0.1-SNAPSHOT.jar
 
 
 # Expose the port the app runs on
 EXPOSE 8080
 
 # Command to run the application
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "/rps-0.0.1-SNAPSHOT.jar"]
